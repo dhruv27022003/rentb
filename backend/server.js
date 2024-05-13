@@ -4,9 +4,9 @@ import path from 'path';
 import express from "express";
 import cors from "cors";
 import bodyParser from 'body-parser';
-import BikeRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/bike.router.js';
-import orderRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/order.router.js';
-import  { dbConnect } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/configs/database.config.js';
+import BikeRouter from '../backend/routers/bike.router.js';
+import orderRouter from '../backend/routers/order.router.js';
+import  { dbConnect } from '../backend/configs/database.config.js';
 dbConnect();
 // const bodyParser = require('body-parser');
 
@@ -24,7 +24,7 @@ app.use("/api/orders", orderRouter);
 app.use(express.static('public'));  
   
 app.post("/api/order/create", (req, res) => {
-    console.log("Received POST request /api/order/create");
+    console.log("Received POST request to /api/order/create");
     // Your order creation logic here
   });
   

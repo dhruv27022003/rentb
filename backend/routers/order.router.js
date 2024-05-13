@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import asyncHandler from 'express-async-handler';
-import { HTTP_BAD_REQUEST } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/constants/http_status.js';
-import OrderStatus  from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/constants/order_status.js';
+import { HTTP_BAD_REQUEST } from '../constants/http_status.js';
+import OrderStatus  from '../constants/order_status.js';
 import  OrderModel  from '../models/orders.model.js';
 const router = Router();
 

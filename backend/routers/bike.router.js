@@ -1,7 +1,7 @@
 import {Router} from 'express';
-import { sample_Bikes } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/data.js';
+import { sample_Bikes } from '../data.js';
 import asyncHandler from 'express-async-handler';
-import  BikeModel from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/models/bike.model.js'
+import  BikeModel from '../models/bike.model.js'
 const router = Router();
 
 router.get("/seed", asyncHandler(
