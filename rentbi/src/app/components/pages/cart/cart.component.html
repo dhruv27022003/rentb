@@ -1,0 +1,50 @@
+<!-- <app-title title="RIDE" margin="1.5rem 0 0 2.5rem"></app-title> -->
+<app-notfound
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="No vehicle selected"
+  resetLinkText="Explore "
+></app-notfound>
+<div *ngIf="cart && cart.items.length" class="container">
+  <div class="oooi "
+  style="
+  width: 70vw;
+  display: flex;
+  flex-direction: column;"
+  >
+<ul>
+  <li *ngFor="let cartItem of cart.items">
+    <div>
+      <img [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name">
+    </div>
+    <div>
+      <a routerLink="/bike/{{cartItem.Bike.id}}" class ="name">
+        <h2>{{cartItem.Bike.name}}</h2>
+      </a>
+    </div>
+    <div>
+    </div>
+    <div>
+        ₹ {{cartItem.price }}
+    </div>
+
+    <div>
+      <button class="remove-button" (click)="removeFromCart(cartItem)">
+        Remove
+      </button>
+    </div>
+  </li>
+
+</ul>
+<br>
+</div>
+<div class="checkout">
+  <div>
+    <div class="bikes-count">{{cart.totalCount}}</div>
+    <div class="total-price">₹{{cart.totalPrice}}</div>
+  </div>
+
+  <!-- <a  (click)="createOrder()"  routerLink="/thanks">Proceed to Checkout</a> -->
+  <!-- <button  (click)="createOrder()">BOOK Now</button> -->
+  <a   routerLink="/placeOrder">Proceed to Checkout</a>
+</div>
+</div>
