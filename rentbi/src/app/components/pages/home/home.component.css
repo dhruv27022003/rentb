@@ -65,3 +65,19 @@ ngb-rating {
 .top{
     margin-top: 20px;
 }
+
+
+.chatbot{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 92vw;
+    margin-top: 75vh;
+    position: fixed;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 20px;
+
+}

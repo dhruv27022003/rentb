@@ -5,6 +5,7 @@ import { BikepageComponent } from './components/pages/bikepage/bikepage.componen
 import { CartComponent } from './components/pages/cart/cart.component';
 import { ThanksComponent } from './components/partial/thanks/thanks.component';
 import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
+import { ChatbotComponent } from './components/pages/chatbot/chatbot.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'cart-page', component: CartComponent},
   { path: 'placeOrder', component: ThanksComponent},
   { path: 'orderPlaced', component: OrderPlacedComponent},
+  { path: 'chatbot', component: ChatbotComponent},
 ];
 
 @NgModule({

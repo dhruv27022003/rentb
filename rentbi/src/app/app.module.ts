@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ThanksComponent } from './components/partial/thanks/thanks.component';
 import { FormsModule } from '@angular/forms';
 import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
+import { ChatbotComponent } from './components/pages/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { OrderPlacedComponent } from './components/partial/order-placed/order-pl
     NotfoundComponent,
     ThanksComponent,
     OrderPlacedComponent,
+    ChatbotComponent,
   ],
   imports: [
     BrowserModule,
