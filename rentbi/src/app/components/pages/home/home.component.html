@@ -9,7 +9,12 @@
 <ul>
     <li *ngFor="let Bike of Bikes">
       <a routerLink="/explore/{{Bike.id}}">
-        <img [src]="Bike.imageUrl" [alt]="Bike.name" />
+        <img *ngIf="Bike.imageUrl" [src]="Bike.imageUrl" [alt]="Bike.name" />
+        <img
+          *ngIf="Bike.photourl"
+          [src]="Bike.photourl"
+          alt=" Photurl failed..."
+        />
         <div class="content">
           <div class="name">
             {{Bike.name}}

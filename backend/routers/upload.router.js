@@ -5,8 +5,8 @@ import asyncHandler from 'express-async-handler';
 import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import  BikeModel from '../models/bike.model.js'
 
-// Create __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -41,6 +41,20 @@ router.post(
     const fileUrl = `${req.file.filename}`;
     res.send({ fileUrl });
     console.log("response sent")
+  })
+);
+
+
+router.post(
+  '/addbike',
+  asyncHandler(async (req, res) => {
+
+    const bike = new BikeModel(req.body);
+    console.log("bike",bike)
+    await BikeModel.create(bike);
+    const fileUrl = `${req}`;
+
+    console.log("response res",fileUrl)
   })
 );
 

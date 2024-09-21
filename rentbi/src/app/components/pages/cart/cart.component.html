@@ -14,7 +14,13 @@
 <ul>
   <li *ngFor="let cartItem of cart.items">
     <div>
-      <img [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name">
+      <!-- <img [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name"> -->
+      <img *ngIf="cartItem.Bike.imageUrl" [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name" height="100%" />
+      <img
+        *ngIf="cartItem.Bike.photourl"
+        [src]="cartItem.Bike.photourl"
+        alt="cartItem.Bike.name"
+      />
     </div>
     <div>
       <a routerLink="/bike/{{cartItem.Bike.id}}" class ="name">

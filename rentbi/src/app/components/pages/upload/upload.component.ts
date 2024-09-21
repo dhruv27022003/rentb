@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UploadService } from 'src/app/services/upload.service';
-
+import { Bike } from 'src/app/shared/models/Bike';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +9,7 @@ import { UploadService } from 'src/app/services/upload.service';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
-
+  bike: Bike = new Bike(); 
   selectedFile: File | null = null;
   uploadedFileId: string | null = null;
   errorMessage: string | null = null;
@@ -52,4 +52,22 @@ export class UploadComponent {
     
   }
 
+
+  submitBike() {
+    if(this.photoUrl1){
+      this.bike.photourl = this.photoUrl1
+    }
+
+    console.log('Submitting bike', this.bike);
+    this.http.post<{ bike: Bike}>('http://localhost:5000/api/upload/addbike', this.bike).subscribe(
+      (response) => {
+        console.log('Bike submitted successfully', response);
+      },
+      (error) => {
+        console.error('Error submitting bike', error);
+      }
+    );
+  }
+
 }
+

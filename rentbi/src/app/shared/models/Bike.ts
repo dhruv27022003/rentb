@@ -9,5 +9,8 @@ export class Bike{
   origins?: string[];
   cookTime?:string;
   mileage?: number;
-  photo?: string;
+  photourl?: string;
+  owner_name?: string;
+  owner_address?: string;
+  owner_phone?: string;
 }

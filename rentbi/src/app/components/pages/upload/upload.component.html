@@ -1,4 +1,4 @@
-<!-- <p>upload works!</p> -->
+<!-- <p>upload works!</p>
 <div class="container align-items-center">
   <div class="align-items-center w-75" id="form" data-bs-theme="dark">
     <div class="form-signinm-auto">
@@ -35,6 +35,11 @@
         <label for="floatingInput">Address</label>
       </div>
 
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="address" placeholder="name@example.com" >
+        <label for="floatingInput">Phone</label>
+      </div>
+
         <h3>Upload Photo</h3>
 
         <form (submit)="onSubmit($event)">
@@ -54,6 +59,76 @@
           width="300"
         />
         <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+</div> -->
+<div class="container align-items-center">
+  <div class="align-items-center w-75" id="form" data-bs-theme="dark">
+    <div class="form-signinm-auto">
+      <form (ngSubmit)="submitBike()">
+        <h1 class="h3 mb-3 fw-normal">Please Enter Your Bike Details</h1>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.name" name="name" placeholder="Vehicle Name" required>
+          <label for="name">Vehicle Name</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.price" name="price" placeholder="Price" required>
+          <label for="price">Price</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.mileage" name="mileage" placeholder="Mileage" required>
+          <label for="mileage">Mileage</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.tags" name="tags" placeholder="Category Tags" required>
+          <label for="tags">Category Tags</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.owner_name" name="owner_name" placeholder="Your Name" required>
+          <label for="owner_name">Owner's Name</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.owner_address" name="owner_address" placeholder="Owner's Address" required>
+          <label for="owner_address">Owner's Address</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control my-2" [(ngModel)]="bike.owner_phone" name="owner_phone" placeholder="Owner's Phone" required>
+          <label for="owner_phone">Owner's Phone</label>
+        </div>
+
+        <h3>Upload Photo</h3>
+        <!-- <input type="file" accept="image/*" (change)="onFileSelected($event)" /><br /><br /> -->
+
+        <form (submit)="onSubmit($event)">
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+          /><br /><br />
+          <button type="submit" [disabled]="!selectedFile">Upload</button>
+        </form>
+
+        <p *ngIf="photoUrl1">Photo uploaded successfully. View it below:</p>
+        <img
+          *ngIf="photoUrl1"
+          [src]="photoUrl1"
+          alt="Uploaded Photo..."
+          width="300"
+        />
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+
+
+
+        <button type="submit" >Submit</button>
       </form>
     </div>
   </div>

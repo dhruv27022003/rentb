@@ -15,6 +15,13 @@
     </div>
   </div>
   <div class="img_container">
-    <img [src]="bike?.imageUrl" [alt]="bike?.name" height="100%" />
+    <!-- <img [src]="bike?.imageUrl" [alt]="bike?.name" height="100%" /> -->
+    <img *ngIf="bike?.imageUrl" [src]="bike?.imageUrl" [alt]="bike?.name" height="100%" />
+    <img
+      *ngIf="bike?.photourl"
+      [src]="bike?.photourl"
+      alt="bike?.name"
+    />
+
   </div>
 </div>
