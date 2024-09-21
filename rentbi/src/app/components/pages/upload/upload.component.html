@@ -1,0 +1,60 @@
+<!-- <p>upload works!</p> -->
+<div class="container align-items-center">
+  <div class="align-items-center w-75" id="form" data-bs-theme="dark">
+    <div class="form-signinm-auto">
+      <form>
+        <h1 class="h3 mb-3 fw-normal">Please Enter Your Details</h1>
+
+        <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" >
+        <label for="floatingInput">Vehicle Name</label>
+      </div>
+
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" >
+        <label for="floatingInput">Rent</label>
+      </div>
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" >
+        <label for="floatingInput">Mileage</label>
+      </div>
+      
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" >
+        <label for="floatingInput">Category Tags</label>
+      </div>
+
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" >
+        <label for="floatingInput">Your Name</label>
+      </div>
+
+            
+      <div class="form-floating">
+        <input class="form-control my-2" id="floatingInput" name="address" placeholder="name@example.com" >
+        <label for="floatingInput">Address</label>
+      </div>
+
+        <h3>Upload Photo</h3>
+
+        <form (submit)="onSubmit($event)">
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+          /><br /><br />
+          <button type="submit" [disabled]="!selectedFile">Upload</button>
+        </form>
+
+        <p *ngIf="photoUrl1">Photo uploaded successfully. View it below:</p>
+        <img
+          *ngIf="photoUrl1"
+          [src]="photoUrl1"
+          alt="Uploaded Photo..."
+          width="300"
+        />
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+</div>

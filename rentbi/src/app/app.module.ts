@@ -14,6 +14,7 @@ import { ThanksComponent } from './components/partial/thanks/thanks.component';
 import { FormsModule } from '@angular/forms';
 import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
 import { ChatbotComponent } from './components/pages/chatbot/chatbot.component';
+import { UploadComponent } from './components/pages/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ChatbotComponent } from './components/pages/chatbot/chatbot.component';
     ThanksComponent,
     OrderPlacedComponent,
     ChatbotComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
