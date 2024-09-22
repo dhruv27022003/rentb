@@ -4,10 +4,14 @@
       <h1 class="naam">{{ bike?.name }}</h1>
 
       <h4 style="margin-top: 3vh">Rs.{{ bike?.price }} /day</h4>
-      <h5>{{ bike?.stars }}/5 ★</h5>
+      <h5 *ngIf="bike?.stars">{{ bike?.stars }}/5 ★</h5>
       <h5>Milage: {{ bike?.mileage }} kmpl</h5>
       <div class="tag">
         <app-tags [bikepagetags]="bike?.tags" ></app-tags>
+      </div>
+      <div *ngIf="bike?.owner_name" >
+        <br><br>
+        <h5>Owner's Name: {{ bike?.owner_name }}</h5>
       </div>
     </div>
     <div class="but">
@@ -24,4 +28,7 @@
     />
 
   </div>
+</div>
+<div class="deletebutton">
+<button (click)="deleteBike()" >Remove this bike</button>
 </div>

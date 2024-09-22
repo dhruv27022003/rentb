@@ -21,6 +21,16 @@ router.get("/",asyncHandler(
   }
 ))
 
+router.post("/delete",asyncHandler(
+  async (req, res) => {
+    // console.log("calling delete", req.body)
+    const bike = await BikeModel.findById(req.body._id);
+    console.log("bike", bike)
+    await BikeModel.deleteOne(bike);
+    console.log("deleted")
+    res.send("Deleted");
+  }
+))
 
 
 export default router;

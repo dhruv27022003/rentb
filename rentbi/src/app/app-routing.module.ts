@@ -7,7 +7,7 @@ import { ThanksComponent } from './components/partial/thanks/thanks.component';
 import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
 import { ChatbotComponent } from './components/pages/chatbot/chatbot.component';
 import { UploadComponent } from './components/pages/upload/upload.component';
-
+import { DeletepageComponent } from './components/pages/deletepage/deletepage.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'orderPlaced', component: OrderPlacedComponent},
   { path: 'chatbot', component: ChatbotComponent},
   { path: 'upload-page', component: UploadComponent},
+  { path: 'delete', component: DeletepageComponent},
 ];
 
 @NgModule({

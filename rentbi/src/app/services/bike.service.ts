@@ -8,6 +8,7 @@ import axios from 'axios';
 })
    
   export class BikeService {
+ 
   constructor (){}
 
   
@@ -41,6 +42,11 @@ import axios from 'axios';
       { name: 'ELECTRIC', count: 1 },
       
     ];
+  }
+
+  deleteBike(bike: Bike) {
+    throw new Error('Method not implemented.');
+   
   }
  
   async getAllbikebytag(tag: string): Promise<Bike[]> {

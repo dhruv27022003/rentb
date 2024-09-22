@@ -23,7 +23,9 @@ export class BikepageComponent implements OnInit {
       if (params['id']) {
         const bike = await this.bikeservices.getAllbyid(params['id']);
         if (bike) {
-          this.bike = bike; // Assign the value only if it's not undefined
+          this.bike = bike; 
+          console.log("bike info",this.bike)
+          // Assign the value only if it's not undefined
         } else {
           console.log(" yoo error")
           // Handle the case where bike is undefined, e.g., redirect or show an error
@@ -43,5 +45,12 @@ export class BikepageComponent implements OnInit {
    if(this.bike)
     { this.CartService.addToCart(this.bike);}
     this.router.navigateByUrl('/cart-page');
+  }
+
+  deleteBike(){
+    console.log("delete")
+    // if(this.bike)
+    // { this.bikeservices.deleteBike(this.bike);}
+    this.router.navigateByUrl('/delete');
   }
 }

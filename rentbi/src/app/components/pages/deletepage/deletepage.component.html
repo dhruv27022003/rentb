@@ -1,0 +1,76 @@
+
+<div class="container align-items-center">
+    <div class="align-items-center w-75" id="form" data-bs-theme="dark">
+      <div class="form-signinm-auto">
+        <form (ngSubmit)="submitBike()">
+          <h1 class="h3 mb-3 fw-normal">Please Enter Your Details</h1>
+  
+    
+          <div class="form-floating">
+            <input class="form-control my-2" [(ngModel)]="bike.owner_name" name="owner_name" placeholder="Your Name" required>
+            <label for="owner_name">Owner's Name</label>
+          </div>
+  
+          <div class="form-floating">
+            <input class="form-control my-2" [(ngModel)]="bike.owner_address" name="owner_address" placeholder="Owner's Address" required>
+            <label for="owner_address">Owner's Address</label>
+          </div>
+  
+          <div class="form-floating">
+            <input class="form-control my-2" [(ngModel)]="bike.owner_phone" name="owner_phone" placeholder="Owner's Phone" required>
+            <label for="owner_phone">Owner's Phone</label>
+          </div>
+  
+          <button type="submit" >See Your Bikes</button>
+        </form>
+
+          <!-- Display filtered bikes -->
+  <!-- <div *ngIf="filteredBikes.length > 0" class="mt-5">
+    <h2>Matching Bikes</h2>
+    <div *ngFor="let bike of filteredBikes" class="bike-item">
+      <p><strong>Name:</strong> {{ bike.name }}</p>
+      <p><strong>Price:</strong> {{ bike.price }}</p>
+      <p><strong>Owner's Name:</strong> {{ bike.owner_name }}</p>
+      <p><strong>Owner's Address:</strong> {{ bike.owner_address }}</p>
+      <p><strong>Owner's Phone:</strong> {{ bike.owner_phone }}</p>
+    </div>
+  </div> -->
+
+  <ul>
+    <li *ngFor="let cartItem of filteredBikes">
+      <div>
+        <!-- <img [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name"> -->
+        <img *ngIf="cartItem.imageUrl || cartItem.photourl" [src]="cartItem.imageUrl  || cartItem.photourl" [alt]="cartItem.name" height="100%" />
+      </div>
+      <div>
+        <a routerLink="/bike/{{cartItem.id}}" class ="name">
+          <h2>{{cartItem.name}}</h2>
+        </a>
+      </div>
+      <div>
+      </div>
+      <div>
+          ₹ {{cartItem.price }}
+      </div>
+  
+      <div>
+        <button class="remove-button" (click)="deletebike(cartItem)">
+          Delete
+        </button>
+      </div>
+    </li>
+  
+  </ul>
+
+  <div *ngIf="responseMessage" class="mt-5">
+    <h2>{{ responseMessage }}</h2>
+    </div>
+
+  <!-- If no matching bikes found -->
+  <div *ngIf="filteredBikes.length === 0 && bike.owner_name && bike.owner_address && bike.owner_phone" class="mt-5">
+    <h2>No bikes found matching the details.</h2>
+  </div>
+      </div>
+    </div>
+  </div>
+  

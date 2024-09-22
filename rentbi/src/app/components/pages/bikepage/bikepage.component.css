@@ -92,3 +92,17 @@
     width: 50%;
     /* margin-top: 20vh; */
    }
+
+   .deletebutton {
+    color: white;
+    /* background: #e72929; */
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    font-family: permanent marker;
+    margin-top: 1vh;
+    /* transform: skew(-15deg, 0); */
+    position: fixed;
+    right: 0px; bottom: 0px;
+    outline: none;
+    opacity: 0.8;}
